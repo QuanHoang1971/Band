@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./themify-icons/themify-icons.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">
+        <!-- begin nav -->
+        <ul id="nav">
+          <li><a href="#">Home</a></li>
+          <!-- thẻ li có tính chất block nên nằm trên 1 cột xuống dòng -->
+          <li><a href="#">Band</a></li>
+          <li><a href="#">Tour</a></li>
+          <li><a href="#">Contact</a></li>
+          <li>
+            <a href="#"
+              >More
+              <i class="nav-arrow-down ti-angle-down"></i>
+              <!-- dùng thẻ i vì nó tượng trưng cho icon -->
+            </a>
+            <ul class="subnav">
+              <li><a href="">Merchandise</a></li>
+              <li><a href="">Extra</a></li>
+              <li><a href="">Media</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- end nav -->
+
+        <!-- begin Search button -->
+        <div class="search-btn">
+          <i class="search-icon ti-search"></i>
+        </div>
+        <!-- là thẻ con của header, đứng cạnh thẻ nav -->
+        <!-- serch-btn là thẻ div nên sẽ kế thừa hết chiều ngang block thẻ cha header
+        nên sẽ dùng float:right để đẩy sang phải -->
+        <!-- end Search button -->
+      </div>
+
+      <div id="slider">
+        <div class="text-content">
+          <h2 class="text-heading">New York</h2>
+          <div class="text-description">The atmosphere in New York</div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="content-section">
+          <h2 class="section-heading">THE BAND</h2>
+          <p class="section-sub-heading">We love music</p>
+          <p class="about-text">
+            We have created a fictional music Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Qui suscipit sunt aliquid assumenda
+            doloribus saepe. Corporis ipsa tenetur corrupti beatae facere
+            excepturi incidunt facilis nulla quibusdam quod! Est, animi unde?
+          </p>
+
+          <!-- Member -->
+          <div class="member-list">
+            <div class="member-item">
+              <p class="member-name">Adele</p>
+              <img src="./img/bandmember.jpeg" alt="" class="member-img" />
+            </div>
+
+            <div class="member-item">
+              <p class="member-name">Jason</p>
+              <img src="./img/bandmember.jpeg" alt="" class="member-img" />
+            </div>
+
+            <div class="member-item">
+              <p class="member-name">Bob</p>
+              <img
+                src="./img/bandmember.jpeg"
+                alt=""
+                class="member-img"/>
+            </div>
+          </div>
+       
+         
+
+        <!-- TOUR SECTION -->
+        <!-- ko đổ màu đen ở phần này đc vị chỉ đổ background ở padding, 
+        margin sẽ ko đổ màu đc, nên sẽ tạo 1 thẻ cha cho mục này -->
+
+        <div class="tour-section">
+          <div class="content-section">
+            <h2 class="section-heading">TOUR DATES</h2>
+            <p class="section-sub-heading">Remember to book your tickets!</p>
+          </div>
+        </div>
+        <!-- Contact SECTION -->
+
+        <div class="content-section">
+          <h2 class="section-heading">CONTACT</h2>
+          <p class="section-sub-heading">Fan, Drop a note</p>
+        </div>
+      </div>
+      <div id="footer"></div>
+    </div>
+  </body>
+</html>

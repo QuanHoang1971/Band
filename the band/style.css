@@ -1,0 +1,186 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+}
+/* thẻ * sẽ áp dụng cho toàn bộ, kể cả ko bao gồm font chữ
+cho nên ko cho vào, về tư duy logic */
+#main {
+}
+#header {
+  height: 46px;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  /* fixed sẽ ăn theo màn hình 
+  để top 0 vì có thể browser khác nhau, đảm bảo nó luôn trên top
+  bản chất là fixed sẽ nổi lên trên, đè lên slider*/
+}
+#nav {
+  display: inline-block;
+}
+/* để nó ko kế thừa hết chiều dài của block, chỉ dài đến MORE */
+#nav,
+.subnav {
+  list-style-type: none;
+}
+/* xóa dấu chấm ở đầu dòng của thẻ li */
+
+#nav > li {
+  display: inline-block;
+}
+/* chỉ cho thằng con li inline-block kế thừa thằng cha li */
+
+#nav li {
+  position: relative;
+  /* nó sẽ dàn ngang ra, block là để tạo đc height, width */
+  /* thẻ cha nav li sẽ để relative  */
+}
+#nav > li > a {
+  color: #fff;
+  text-transform: uppercase;
+  /* nó sẽ vào thẻ l1 cấp 1, cấp 2 li ko ảnh hưởng */
+}
+
+#nav li a {
+  text-decoration: none;
+  line-height: 46px;
+  /* header chiều cao 46px, để chữ bằng vs header sẽ căn đc giữa */
+  padding: 0 24px;
+  display: block;
+  /* thuộc tính block li sẽ kế thừa chiều ngang của thẻ chứa nó thôi */
+}
+#nav li:hover .subnav {
+  display: block;
+}
+/* nó sẽ ghi đè lên #nav .subnav  */
+
+#nav > li:hover > a {
+  color: #000;
+  background-color: #ccc;
+}
+
+/* nó chỉ tác động hover đến thẻ con a cấp 1 t*/
+
+#nav .subnav li:hover,
+#nav > li:hover > a {
+  color: #000;
+  background-color: #ccc;
+  /* display: inline-block; */
+  /* nó sẽ ăn theo line-heigh 46px ở trên */
+}
+#nav .subnav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  /* nó lấy đúng bằng chiều cao thẻ cha chứa nó */
+  left: 0;
+  /* đôi khi browser sai lệch nên cần thiết lập nthe */
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  /* nó sẽ căn theo thẻ cha nav li */
+}
+#nav .subnav a {
+  color: #000;
+  padding: 0 16px;
+  line-height: 38px;
+}
+#nav .nav-arrow-down {
+  font-size: 14px;
+}
+#header .search-btn {
+  float: right;
+  padding: 0px 21px;
+}
+#header .search-btn:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+#header .search-icon {
+  color: rgb(235, 227, 227);
+  font-size: 20px;
+  line-height: 46px;
+}
+#slider {
+  margin-top: 46px;
+  /* vì thằng header để fixed nên nó đè lên trên slider
+ slider phải lùi xuống =chiều cao của header là 46px
+ nếu ko thì ảnh sẽ bị chèn xuống dưới header */
+  padding-top: 50%;
+  /*  50% để chiều cao luôn bằng 1/2 chiều ngang, tỉ lệ ảnh
+  ko bị co giãn khi thay đổi   */
+  position: relative;
+
+  background: url("./img/chicago.jpeg") top center / cover no-repeat;
+  /* nó sẽ phủ đúng slider mong muốn */
+}
+#slider .text-content {
+  position: absolute;
+  /* để nó bám theo thẻ cha slider, ko ảnh hưởng đến 
+  kích thước của slider */
+  bottom: 47px;
+  color: #fff;
+  /* left: 50%;
+  transform: translateX(-50%); */
+  text-align: center;
+  /* công thức để căn giữa */
+  width: 100%;
+  /* cách 2 căn giữa, cho nó chạy hết width 
+  tự nhiên chữ sẽ ở giữa  */
+}
+#slider .text-description {
+  font-size: 15px;
+  margin-top: 20px;
+}
+#content {
+}
+
+#content .content-section {
+  width: 800px;
+  padding: 64px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+#content .section-heading,
+.section-sub-heading {
+  text-align: center;
+}
+#content .section-sub-heading {
+  font-size: 15px;
+  font-style: italic;
+  opacity: 0.7;
+  line-height: 1.4;
+}
+#content .about-text {
+  text-align: justify;
+  font-size: 20px;
+}
+
+#content .member-item {
+  float: left;
+  width: 33.33333%;
+  text-align: center;
+}
+#content .member-name {
+  font-size: 15px;
+  padding-top: 20px;
+}
+#content .member-img {
+  width: 154px;
+}
+
+.tour-section {
+  /* background-color: #000; */
+}
+/* nên để trong id rồi gọi class ra
+để về sau nhiều ko bị nhầm */
+#footer {
+}
